@@ -44,3 +44,20 @@ class TransactionHistory:
     def show_transactions(self):
         for transaction in self.transactions:
             print(transaction.transaction_id, transaction.customer, transaction.amount)
+
+
+vipcustomer = VipCustomer("VIP001", "Benga")
+vipcustomer.earn_points(40000)
+vipcustomer.redeem_points(12500)
+
+transaction1 = Transaction("T001", vipcustomer, 40000)
+transaction2 = Transaction("T002", vipcustomer, 12500)
+
+transatcion_history = TransactionHistory()
+transatcion_history.add_transaction(transaction1)
+transatcion_history.add_transaction(transaction2)
+
+transatcion_history.show_transactions()
+balance = vipcustomer.show_points()
+
+print(f"Customer ID: {vipcustomer.customer_id}")
